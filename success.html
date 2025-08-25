@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merci - AutoFlow Pro</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #2563eb, #1e40af);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .success-container {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            text-align: center;
+            max-width: 600px;
+            margin: 2rem;
+        }
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: #10b981;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-size: 3rem;
+        }
+        h1 {
+            color: #1e40af;
+            margin-bottom: 1rem;
+        }
+        p {
+            color: #334155;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        .back-button {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 2rem;
+            transition: background 0.3s;
+        }
+        .back-button:hover {
+            background: #1e40af;
+        }
+    </style>
+</head>
+<body>
+    <div class="success-container">
+        <div class="success-icon">✅</div>
+        <h1>Merci pour votre demande !</h1>
+        <p><strong>Votre audit gratuit est en préparation.</strong></p>
+        <p>Nous avons bien reçu votre demande et un de nos experts en automatisation vous contactera dans les prochaines 24 heures.</p>
+        <p style="background: #f8fafc; padding: 1rem; border-radius: 5px; margin-top: 2rem;">
+            📧 Un email de confirmation vient de vous être envoyé<br>
+            📞 Nous vous appellerons sous 24h<br>
+            📊 Votre audit personnalisé sera prêt en 48h
+        </p>
+        <a href="/" class="back-button">Retour à l'accueil</a>
+    </div>
+    <script>
+        // Redirection automatique après 10 secondes
+        setTimeout(() => {
+            window.location.href = '/';
+        }, 10000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Agence d'automatisation B2B - Gagnez 10h/semaine avec nos solutions Zapier et Make. Audit gratuit pour PME.">
+    <meta name="keywords" content="automatisation, zapier, make, efficacité, PME, gain temps, workflow">
+    <title>AutoFlow Pro - Automatisez vos processus, Gagnez 10h/semaine</title>
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- CSS Styles -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #2563eb;
+            --dark-blue: #1e40af;
+            --success-green: #10b981;
+            --light-gray: #f8fafc;
+            --dark-gray: #334155;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-blue);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        .cta-button {
+            background: var(--success-green);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s;
+            font-weight: 600;
+        }
+
+        .cta-button:hover {
+            background: #059669;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+            color: white;
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin: 3rem 0;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--success-green);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 5rem 2rem;
+            background: var(--light-gray);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark-blue);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            color: var(--dark-gray);
+            opacity: 0.8;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--dark-blue);
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            padding: 5rem 2rem;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .portfolio-item {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .portfolio-content {
+            padding: 2rem;
+        }
+
+        .portfolio-tag {
+            background: var(--success-green);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .portfolio-title {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--dark-blue);
+        }
+
+        .portfolio-results {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .result {
+            text-align: center;
+        }
+
+        .result-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--success-green);
+        }
+
+        .result-label {
+            font-size: 0.9rem;
+            color: var(--dark-gray);
+        }
+
+        /* About Section */
+        .about {
+            padding: 5rem 2rem;
+            background: var(--light-gray);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--dark-blue);
+        }
+
+        .expertise-list {
+            list-style: none;
+            margin-top: 2rem;
+        }
+
+        .expertise-list li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .expertise-list li:before {
+            content: "✓";
+            color: var(--success-green);
+            font-weight: bold;
+            margin-right: 1rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 2rem;
+            background: var(--dark-blue);
+            color: white;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .contact-form {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .submit-btn {
+            background: var(--success-green);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #059669;
+        }
+
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--success-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-gray);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            nav {
+                padding: 1rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .service-card,
+        .portfolio-item {
+            animation: fadeInUp 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">AutoFlow Pro</div>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#contact" class="cta-button">Audit Gratuit</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Automatisez vos processus, Gagnez 10h/semaine</h1>
+            <p>Nous transformons vos tâches répétitives en workflows automatisés avec Zapier et Make. Plus d'erreurs humaines, plus de temps perdu.</p>
+            <a href="#contact" class="cta-button">Demander un Audit Gratuit</a>
+            
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number">95%</div>
+                    <div class="stat-label">Temps économisé</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">0</div>
+                    <div class="stat-label">Erreur humaine</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">10h</div>
+                    <div class="stat-label">Gagnées/semaine</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Nos Services d'Automatisation</h2>
+            <p class="section-subtitle">Des solutions sur-mesure pour optimiser votre productivité</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">⚡</div>
+                    <h3>Automatisation Zapier</h3>
+                    <p>Connectez plus de 5000 applications automatiquement. De la capture de leads à la facturation, nous automatisons tout votre pipeline commercial.</p>
+                    <ul style="margin-top: 1rem; padding-left: 1rem;">
+                        <li>Intégration CRM automatique</li>
+                        <li>Synchronisation des données</li>
+                        <li>Notifications intelligentes</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3>Workflows Make (Integromat)</h3>
+                    <p>Créez des scenarios d'automatisation complexes avec une précision chirurgicale. Parfait pour les processus métier avancés.</p>
+                    <ul style="margin-top: 1rem; padding-left: 1rem;">
+                        <li>Scenarios multi-étapes</li>
+                        <li>Conditions logiques avancées</li>
+                        <li>Traitement de données complexes</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>Automatisation CRM</h3>
+                    <p>Transformez votre CRM en machine à vendre. Lead scoring, nurturing automatique, reporting en temps réel.</p>
+                    <ul style="margin-top: 1rem; padding-left: 1rem;">
+                        <li>Lead scoring automatique</li>
+                        <li>Séquences d'emails</li>
+                        <li>Rapports automatisés</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🎯</div>
+                    <h3>Marketing Automation</h3>
+                    <p>De la capture du lead à la conversion client, automatisez tout votre funnel marketing pour maximiser vos revenus.</p>
+                    <ul style="margin-top: 1rem; padding-left: 1rem;">
+                        <li>Funnels automatisés</li>
+                        <li>Segmentation intelligente</li>
+                        <li>ROI trackable</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">💰</div>
+                    <h3>Automatisation Comptable</h3>
+                    <p>Factures automatiques, relances, rapports financiers. Votre comptabilité tourne sans vous.</p>
+                    <ul style="margin-top: 1rem; padding-left: 1rem;">
+                        <li>Facturation automatique</li>
+                        <li>Relances clients</li>
+                        <li>Tableau de bord financier</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📈</div>
+                    <h3>Analytics & Reporting</h3>
+                    <p>Tableaux de bord temps réel, KPIs automatiques, alertes intelligentes. Pilotez avec les bonnes données.</p>
+                    <ul style="margin-top: 1rem; padding-left: 1rem;">
+                        <li>Dashboards automatiques</li>
+                        <li>Alertes personnalisées</li>
+                        <li>KPIs en temps réel</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <h2 class="section-title">Cas d'Usage Concrets</h2>
+            <p class="section-subtitle">Découvrez comment nos clients économisent du temps et de l'argent</p>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-content">
+                        <span class="portfolio-tag">CRM Automation</span>
+                        <h3 class="portfolio-title">Agence Immobilière - Pipeline Commercial Automatisé</h3>
+                        <p>Automatisation complète du suivi prospects : capture leads site web → qualification → rendez-vous → suivi → signature.</p>
+                        <div class="portfolio-results">
+                            <div class="result">
+                                <div class="result-value">2h → 10min</div>
+                                <div class="result-label">Temps/jour</div>
+                            </div>
+                            <div class="result">
+                                <div class="result-value">+40%</div>
+                                <div class="result-label">Conversions</div>
+                            </div>
+                            <div class="result">
+                                <div class="result-value">0</div>
+                                <div class="result-label">Oublis</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-content">
+                        <span class="portfolio-tag">E-commerce</span>
+                        <h3 class="portfolio-title">Boutique en ligne - Gestion Commandes & Stock</h3>
+                        <p>Synchronisation automatique commandes → facturation → expédition → suivi client → gestion stock → réapprovisionnement.</p>
+                        <div class="portfolio-results">
+                            <div class="result">
+                                <div class="result-value">8h → 1h</div>
+                                <div class="result-label">Gestion/jour</div>
+                            </div>
+                            <div class="result">
+                                <div class="result-value">95%</div>
+                                <div class="result-label">Précision</div>
+                            </div>
+                            <div class="result">
+                                <div class="result-value">€2.3k</div>
+                                <div class="result-label">Économies/mois</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-content">
+                        <span class="portfolio-tag">Marketing</span>
+                        <h3 class="portfolio-title">SaaS B2B - Funnel Marketing Complet</h3>
+                        <p>Lead magnet → séquences email → scoring → démonstration → signature → onboarding client automatisé.</p>
+                        <div class="portfolio-results">
+                            <div class="result">
+                                <div class="result-value">300%</div>
+                                <div class="result-label">ROI marketing</div>
+                            </div>
+                            <div class="result">
+                                <div class="result-value">12h</div>
+                                <div class="result-label">Économisées/sem</div>
+                            </div>
+                            <div class="result">
+                                <div class="result-value">+60%</div>
+                                <div class="result-label">Leads qualifiés</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-content">
+                        <span class="portfolio-tag">Service Client</span>
+                        <h3 class="portfolio-title">Cabinet Conseil - Support Client Automatisé</h3>
+                        <p>Tickets support automatiques, catégorisation intelligente, escalade, suivi satisfaction, base de connaissances mise à jour.</p>
+                        <div class="portfolio-results">
+                            <div class="result">
+                                <div class="result-value">24/7</div>
+                                <div class="result-label">Disponibilité</div>
+                            </div>
+                            <div class="result">
+                                <div class="result-value">-70%</div>
+                                <div class="result-label">Temps réponse</div>
+                            </div>
+                            <div class="result">
+                                <div class="result-value">98%</div>
+                                <div class="result-label">Satisfaction</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-content">
+                        <span class="portfolio-tag">Finance</span>
+                        <h3 class="portfolio-title">PME - Automatisation Comptable Complète</h3>
+                        <p>Factures automatiques, relances, rapprochements bancaires, reporting financier, prévisionnel trésorerie.</p>
+                        <div class="portfolio-results">
+                            <div class="result">
+                                <div class="result-value">15h → 2h</div>
+                                <div class="result-label">Compta/mois</div>
+                            </div>
+                            <div class="result">
+                                <div class="result-value">-85%</div>
+                                <div class="result-label">Erreurs</div>
+                            </div>
+                            <div class="result">
+                                <div class="result-value">€1.8k</div>
+                                <div class="result-label">Économies/mois</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Pourquoi AutoFlow Pro ?</h2>
+                    <p>Nous sommes des experts en automatisation business avec plus de 5 ans d'expérience dans l'optimisation des processus métier.</p>
+                    <p>Notre mission : vous faire gagner du temps et de l'argent en éliminant les tâches répétitives et sources d'erreurs.</p>
+                    
+                    <ul class="expertise-list">
+                        <li>Plus de 200 projets d'automatisation réussis</li>
+                        <li>Experts certifiés Zapier et Make</li>
+                        <li>ROI moyen de 400% sur nos projets</li>
+                        <li>Support technique inclus pendant 6 mois</li>
+                        <li>Formation équipe comprise dans nos services</li>
+                    </ul>
+                </div>
+                
+                <div class="about-stats">
+                    <div style="background: white; padding: 2rem; border-radius: 10px; text-align: center;">
+                        <h3 style="color: var(--dark-blue); margin-bottom: 2rem;">Nos Résultats</h3>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                            <div>
+                                <div style="font-size: 2rem; font-weight: bold; color: var(--success-green);">200+</div>
+                                <div style="color: var(--dark-gray);">Projets réalisés</div>
+                            </div>
+                            <div>
+                                <div style="font-size: 2rem; font-weight: bold; color: var(--success-green);">98%</div>
+                                <div style="color: var(--dark-gray);">Clients satisfaits</div>
+                            </div>
+                            <div>
+                                <div style="font-size: 2rem; font-weight: bold; color: var(--success-green);">€2.5M</div>
+                                <div style="color: var(--dark-gray);">Économisés clients</div>
+                            </div>
+                            <div>
+                                <div style="font-size: 2rem; font-weight: bold; color: var(--success-green);">24h</div>
+                                <div style="color: var(--dark-gray);">Délai moyen</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title" style="color: white; margin-bottom: 3rem;">Audit Gratuit de vos Processus</h2>
+            
+            <div class="contact-content">
+                <div class="contact-form">
+                    <h3>Demandez votre audit gratuit</h3>
+                    <form name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true">
+                        <input type="hidden" name="bot-field" />
+                        <input type="hidden" name="form-name" value="contact" />
+                        
+                        <div class="form-group">
+                            <label for="company">Entreprise *</label>
+                            <input type="text" id="company" name="company" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="name">Nom complet *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email professionnel *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Téléphone</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="employees">Nombre d'employés</label>
+                            <select id="employees" name="employees">
+                                <option value="">Sélectionner</option>
+                                <option value="1-10">1-10 employés</option>
+                                <option value="11-50">11-50 employés</option>
+                                <option value="51-200">51-200 employés</option>
+                                <option value="200+">200+ employés</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="processes">Quels processus souhaitez-vous automatiser ? *</label>
+                            <textarea id="processes" name="processes" required placeholder="Ex: Gestion des leads, facturation, support client, reporting..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="time-spent">Combien d'heures/semaine consacrez-vous à ces tâches ? *</label>
+                            <select id="time-spent" name="time-spent" required>
+                                <option value="">Sélectionner</option>
+                                <option value="1-5h">1-5 heures/semaine</option>
+                                <option value="6-15h">6-15 heures/semaine</option>
+                                <option value="16-30h">16-30 heures/semaine</option>
+                                <option value="30h+">Plus de 30h/semaine</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Obtenir mon Audit Gratuit</button>
+                    </form>
+                </div>
+                
+                <div class="contact-info">
+                    <h3>Prêt à automatiser ?</h3>
+                    <p style="margin-bottom: 2rem;">Nos experts analysent vos processus et vous proposent un plan d'automatisation sur-mesure.</p>
+                    
+                    <div class="contact-item">
+                        <div class="contact-item-icon">📧</div>
+                        <div>
+                            <strong>Email</strong><br>
+                            contact@autoflowpro.fr
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-item-icon">📞</div>
+                        <div>
+                            <strong>Téléphone</strong><br>
+                            +33 1 XX XX XX XX
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-item-icon">⏰</div>
+                        <div>
+                            <strong>Délai de réponse</strong><br>
+                            Moins de 2 heures (jours ouvrés)
+                        </div>
+                    </div>
+                    
+                    <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 10px; margin-top: 2rem;">
+                        <h4 style="color: var(--success-green); margin-bottom: 1rem;">🎯 Notre Promesse</h4>
+                        <ul style="list-style: none;">
+                            <li style="margin-bottom: 0.5rem;">✓ Audit gratuit et sans engagement</li>
+                            <li style="margin-bottom: 0.5rem;">✓ ROI calculé précisément</li>
+                            <li style="margin-bottom: 0.5rem;">✓ Plan d'action détaillé</li>
+                            <li>✓ Accompagnement complet</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 AutoFlow Pro. Tous droits réservés. | Mentions légales | Politique de confidentialité</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
+                Spécialistes en automatisation business | Zapier Expert | Make Certified Partner
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Form submission tracking
+        document.querySelector('form[name="contact"]').addEventListener('submit', function(e) {
+            // Track conversion (add analytics code here)
+            console.log('Lead form submitted');
+            
+            // Optional: Send to additional tracking systems
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'generate_lead', {
+                    'currency': 'EUR',
+                    'value': 2500 // Average project value
+                });
+            }
+        });
+
+        // Scroll animation for cards
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.service-card, .portfolio-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+{
+  "name": "autoflow-pro-website",
+  "version": "1.0.0",
+  "description": "Site web professionnel pour agence d'automatisation B2B - AutoFlow Pro",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server . -p 3000",
+    "build": "echo 'Site statique - pas de build nécessaire'",
+    "dev": "npx live-server --port=3000",
+    "deploy": "netlify deploy --prod --dir=."
+  },
+  "keywords": [
+    "automatisation",
+    "zapier",
+    "make",
+    "business-automation",
+    "workflow",
+    "productivity",
+    "b2b",
+    "saas"
+  ],
+  "author": "AutoFlow Pro",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vidaluca77-cloud/automation-agency.git"
+  },
+  "homepage": "https://autoflowpro.netlify.app",
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "live-server": "^1.2.2",
+    "netlify-cli": "^17.0.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "config": {
+    "site_name": "AutoFlow Pro",
+    "site_description": "Agence d'automatisation B2B - Gagnez 10h/semaine avec Zapier et Make",
+    "contact_email": "contact@autoflowpro.fr",
+    "analytics": {
+      "google_analytics": "GA_TRACKING_ID",
+      "facebook_pixel": "FB_PIXEL_ID"
+    }
+  }
+}
